@@ -33,14 +33,18 @@
 // ACTUAL CODE STARTS HERE!!1
 
 // do we need to namespace now???
+const movieApp = {};
 
-fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03')
-  .then((results) => {
-    return results.json()
-    // console.log(results)
-  })
-  .then((object) => {
-    console.log(object)
+const getMovieData = () => {
+
+// feting the API
+  fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03')
+    .then((results) => {
+      return results.json()
+      // console.log(results)
+    })
+    .then((object) => {
+      console.log(object)
     // trying to put original_title on the home page
     // go inside of our object
     // get original_title
@@ -60,6 +64,15 @@ fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac60207798
     // object.original_title;
     // document.createElement('h2') = movieTitle;
   })
+}
+
+movieApp.init = () => {
+  // calling the getMovieData upon initialization 
+  getMovieData();
+};
+
+// initializing the app
+movieApp.init();
 
 
   // appending TESTING below
