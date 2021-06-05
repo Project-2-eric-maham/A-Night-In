@@ -8,11 +8,61 @@
 </head>
 <body>
   <h1>open console and hope for the best x</h1>
+  <h2></h2>
+  <!-- <ul class="testing">
 
-
+  </ul> -->
 
 
   <script>
+    fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03')
+    .then((results) => {
+      return results.json()
+      // console.log(results)
+    })
+    .then( (object) => {
+      console.log(object)
+       // trying to put original_title on the home page
+        // go inside of our object
+        // get original_title
+        // create element for original_title (<h2>)
+        // append it the page
+        const movieTitle = object.original_title;
+        const movieOverview = object.overview;
+        const movieHomepage = object.homepage;
+        const moviePoster = object.poster_path;
+        const movieDuration = object.runtime;
+        // document.querySelector('h2') = movieData;
+        console.log(movieTitle);
+        console.log(movieHomepage);
+        console.log(movieOverview);
+        console.log(moviePoster);
+        console.log(movieDuration);
+        // object.original_title;
+        // document.createElement('h2') = movieTitle;
+    })
+
+
+
+
+
+
+    // const displayMovieData = () =>{
+
+    //     const movieData = document.createElement('li');
+    //     movieData.innerHTML = `<h2> ${movieData.original_title}</h2>`
+
+    //     document.appendChild(movieData);
+
+    // }
+
+
+
+
+
+
+
+
   //   const proxiedUrl = 'http://api.site.com/api';
 
   // const url = new URL('http://proxy.hackeryou.com');
