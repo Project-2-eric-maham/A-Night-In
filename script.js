@@ -61,6 +61,8 @@ fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac60207798
     // document.createElement('h2') = movieTitle;
   })
 
+
+  // appending TESTING below
   // append SOMETHING!?
   // const testMovie = [`Harry Potter`, `Not Harry Potter`]
   // console.log(testMovie[0])
