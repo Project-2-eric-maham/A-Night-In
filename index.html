@@ -15,49 +15,6 @@
 
 
   <script>
-<<<<<<< HEAD
-//  API key a0e32a4a0c009553ac6020779811cc03
-//  link to url 'https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03'
-
-const movieApp = {};
-
-movieApp.url = 'https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03';
-movieApp.key = 'a0e32a4a0c009553ac6020779811cc03';
-console.log(movieApp);
-console.log(movieApp.key);
-
-// get data from the movie API
-// pass in the api key as client_id in params
-
-
-// first try to pull info from api target id
-// target id: 18 if it works it should show "fight club"
-
-movieApp.getId = () => {
-  // use url constructor
-  // pass in the api key as client_id in params
-  const apiUrl = new URL(movieApp.url)
-  apiUrl.search = new URLSearchParams({
-    client_id: movieApp.key
-  })
-  // use fetch to make the API request
-  fetch(apiUrl)
-    .then(results => {
-      // returning the data as json
-      return results.json()
-    })
-    .then(jsonResults => {
-      // take the json-fied results
-      // start working with them
-      console.log()
-    })
-}
-console.log(movieApp)
-movieApp.init = () => {
-
-}
-movieApp.init();
-=======
     fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03')
     .then((results) => {
       return results.json()
@@ -102,7 +59,6 @@ movieApp.init();
 
 
 
->>>>>>> expreimental-branch
 
 
 
