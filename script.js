@@ -35,7 +35,7 @@
 // do we need to namespace now???
 const movieApp = {};
 
-const getMovieData = () => {
+movieApp.getMovieData = () => {
 
 // feting the API
   fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03')
@@ -66,13 +66,71 @@ const getMovieData = () => {
   })
 }
 
+// already managed to target movie content inside the local namespace
+// How do we target it in our global namespace?? HOW ?
+
+console.log(movieApp.getMovieData.movieTitle);
+// ^^trying to access movieTitle in global namespace comes back undefined
+
+// create function to display a piece of movie information
+// create a variable to target our ulElement
+// clear out the html content of our ul (for future appending)
+// create an liElement to append content to
+// Decide what content goes in our liELement
+// place movieTitle variable in h2 to appear on page.
+
+movieApp.displayMovie = () => {
+  const ulElement = document.querySelector('.test-ul');
+  ulElement.innerHTML = '';
+  const liElement = document.createElement('li');
+  liElement.innerHTML = `<h2>${movieApp.getMovieData.movieTitle}</h2>`
+  ulElement.appendChild(liElement);
+  console.log(movieApp.getMovieData)
+}
+
+movieApp.displayMovie();
+
+// consider using filter() and forEach loop to more accurately target information
+// try filtering by movieTitle or id
+
+
+
+
 movieApp.init = () => {
   // calling the getMovieData upon initialization 
-  getMovieData();
+  movieApp.getMovieData();
 };
 
 // initializing the app
 movieApp.init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   // appending TESTING below
