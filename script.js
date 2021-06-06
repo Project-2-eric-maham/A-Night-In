@@ -66,10 +66,23 @@ movieApp.getMovieData = () => {
   })
 }
 
+//CREATING FILTER
+  //write a function that will filter the movie data
+  // create an array with the result of the filter inside our namespace
+  // return result for movies with runtime of 139 minutes 
+  // whats the name of our api? 
+
+  movieApp.runtimeCheck = () => {
+    movieApp.runtimeTest = getMovieData.filter((param) => {
+      return param.movieDuration === 139;
+    })
+  }
+
+
 // already managed to target movie content inside the local namespace
 // How do we target it in our global namespace?? HOW ?
 
-console.log(movieApp.getMovieData.movieTitle);
+// console.log(movieApp.getMovieData.movieTitle);
 // ^^trying to access movieTitle in global namespace comes back undefined
 
 // create function to display a piece of movie information
@@ -99,6 +112,8 @@ movieApp.displayMovie();
 movieApp.init = () => {
   // calling the getMovieData upon initialization 
   movieApp.getMovieData();
+  movieApp.runtimeCheck();
+
 };
 
 // initializing the app
