@@ -37,6 +37,10 @@ const movieApp = {};
 
 movieApp.getMovieData = () => {
 
+// create variable for base URL & access key
+movieApp.url = ``
+
+
 // feting the API
   fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03')
     .then((results) => {
@@ -56,15 +60,18 @@ movieApp.getMovieData = () => {
     const moviePoster = object.poster_path;
     const movieDuration = object.runtime;
     // document.querySelector('h2') = movieData;
-    console.log(movieTitle);
-    console.log(movieHomepage);
-    console.log(movieOverview);
-    console.log(moviePoster);
-    console.log(movieDuration);
+    // console.log(movieTitle);
+    // console.log(movieHomepage);
+    // console.log(movieOverview);
+    // console.log(moviePoster);
+    // console.log(movieDuration);
     // object.original_title;
     // document.createElement('h2') = movieTitle;
   })
 }
+
+// ?_?
+
 
 //CREATING FILTER
   //write a function that will filter the movie data
@@ -72,11 +79,11 @@ movieApp.getMovieData = () => {
   // return result for movies with runtime of 139 minutes 
   // whats the name of our api? 
 
-  movieApp.runtimeCheck = () => {
-    movieApp.runtimeTest = getMovieData.filter((param) => {
-      return param.movieDuration === 139;
-    })
-  }
+  // movieApp.runtimeCheck = () => {
+  //   movieApp.runtimeTest = getMovieData.filter((param) => {
+  //     return param.movieDuration === 139;
+  //   })
+  // }
 
 
 // already managed to target movie content inside the local namespace
@@ -97,8 +104,8 @@ movieApp.displayMovie = () => {
   ulElement.innerHTML = '';
   const liElement = document.createElement('li');
   liElement.innerHTML = `<h2>${movieApp.getMovieData.movieTitle}</h2>`
+  // approve is displaying content, but not the content we want! 
   ulElement.appendChild(liElement);
-  console.log(movieApp.getMovieData)
 }
 
 movieApp.displayMovie();
@@ -112,7 +119,7 @@ movieApp.displayMovie();
 movieApp.init = () => {
   // calling the getMovieData upon initialization 
   movieApp.getMovieData();
-  movieApp.runtimeCheck();
+  // movieApp.runtimeCheck();
 
 };
 
