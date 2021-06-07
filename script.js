@@ -60,11 +60,11 @@ movieApp.url = ``
     const moviePoster = object.poster_path;
     const movieDuration = object.runtime;
     // document.querySelector('h2') = movieData;
-    // console.log(movieTitle);
-    // console.log(movieHomepage);
-    // console.log(movieOverview);
-    // console.log(moviePoster);
-    // console.log(movieDuration);
+    console.log(movieTitle);
+    console.log(movieHomepage);
+    console.log(movieOverview);
+    console.log(moviePoster);
+    console.log(movieDuration);
     // object.original_title;
     // document.createElement('h2') = movieTitle;
   })
