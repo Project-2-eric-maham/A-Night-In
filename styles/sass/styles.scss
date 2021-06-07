@@ -1,1 +1,71 @@
 @import 'setup';
+@import 'mixins-variables';
+
+
+// *******************************
+//         general styling
+// *******************************
+
+p {
+    @include base-styling(1.3rem);
+}
+
+.wrapper {
+    @include wrapper(90%);
+}
+
+body {
+    font-size: 62.5%;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+ul, 
+li, 
+a, 
+p, 
+h2, 
+h1 {
+    margin: 0;
+    padding: 0;
+    color: rgb(240, 230, 211);
+}
+
+// consider turning above into mixins
+
+body {
+    background: rgb(10,35,81);
+    background: linear-gradient(144deg, rgba(10,35,81,1) 0%, rgba(0,128,128,1) 100%); 
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/// *******************************
+//         header styling
+// ********************************
+
+.logo {
+    @include logo(2.5rem);
+    text-align: center
+}
+
+
+/// *******************************
+//         heading styling
+// ********************************
+
+.description h2 {
+    @include heading-style(2rem);
+    text-align: center;
+}
+
+
+form {
+    display: grid;
+}

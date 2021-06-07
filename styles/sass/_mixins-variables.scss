@@ -1,0 +1,38 @@
+// Write variables for font types 
+// write mixins for font-styles
+// write mixin for wrapper! 
+
+$font-logo: 'Bungee Shade', cursive;
+$heading-logo: 'Righteous', cursive;
+$base-text: 'PT Serif', serif;
+
+@mixin logo ($size) {
+    font-family: $font-logo;
+    font-size: ($size);
+    margin: 2rem 0;
+}
+
+@mixin heading-style ($size) {
+    font-family: $heading-logo;
+    text-transform: uppercase;
+    font-size: ($size);
+    margin: 2rem 0;
+}
+
+@mixin base-styling ($size){
+    font-family: $base-text;
+    font-size: ($size);
+}
+
+@mixin wrapper ($width){
+    max-width: 1200px;
+    width: ($width);
+    margin: 0 auto;
+}
+
+// font info
+    // font-family: 'Bungee Shade', cursive;
+
+    // font-family: 'PT Serif', serif;
+
+    // font-family: 'Righteous', cursive;
