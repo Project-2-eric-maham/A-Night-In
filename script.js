@@ -49,6 +49,10 @@ movieApp.getMovieData = () => {
   const apiUrl = new URL(movieApp.url)
   apiUrl.search = new URLSearchParams( {
     api_key: movieApp.apikey 
+    // defining search parameters for genre & runtime (eventually)
+
+    // trying to access original_title in api
+    
   })
   // use fetch to make the api request 
   fetch(apiUrl)
@@ -58,14 +62,16 @@ movieApp.getMovieData = () => {
   .then((jsonResults) => {
     // movieApp.getMovieData(jsonResults)
     console.log(jsonResults)
+    console.log(jsonResults.object)
+    
   })
   // WE DID IT YYAAAAYYYY (almost...)
   
   // if there is trouble, try removing the extra brackets ^^^^
-
+  
 }
 
-
+// console.log(movieApp.getMovieData[Object.results[0]])
 
 // create variable for base URL & access key
 
