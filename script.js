@@ -69,6 +69,7 @@ movieApp.getMovieData = () => {
     const moviePoster = jsonResults.results[0].poster_path;
 
     // trying to access original_title in api
+
     const displayMovie = () => {
       const ulElement = document.querySelector('.test-ul');
       ulElement.innerHTML = '';
@@ -85,6 +86,9 @@ movieApp.getMovieData = () => {
       ulElement.appendChild(liElement);
       ulElement.appendChild(pElement);
       ulElement.appendChild(imgElement);
+      // liElement.innerHTML = `<h2></h2>`
+      // approve is displaying content, but not the content we want! 
+      ulElement.appendChild(liElement);
     }
 
     displayMovie();
