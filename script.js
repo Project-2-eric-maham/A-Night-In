@@ -40,7 +40,7 @@ movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
 
 // if this does not work, check for ? between url and api_key
-
+// /bT3c4TSOP8vBmMoXZRDPTII6eDa.jpg
 movieApp.getMovieData = () => {
 
   // PSSSUUUEEEDDDOOOO
@@ -48,11 +48,11 @@ movieApp.getMovieData = () => {
   // pass in apikey as api_key
   const apiUrl = new URL(movieApp.url)
   apiUrl.search = new URLSearchParams( {
-    api_key: movieApp.apikey 
+    api_key: movieApp.apikey,
     // defining search parameters for genre & runtime (eventually)
-
-    // trying to access original_title in api
-    
+    with_genres: '18, 35',
+    // with_runtime:lte: 120
+    // ^^getting unknown error
   })
   // use fetch to make the api request 
   fetch(apiUrl)
@@ -62,8 +62,32 @@ movieApp.getMovieData = () => {
   .then((jsonResults) => {
     // movieApp.getMovieData(jsonResults)
     console.log(jsonResults)
-    console.log(jsonResults.object)
-    
+    console.log(jsonResults.results[0].original_title);
+    // defining movieTitle globally
+    const movieTitle = jsonResults.results[0].original_title;
+    const movieOverview = jsonResults.results[0].overview;
+    const moviePoster = jsonResults.results[0].poster_path;
+
+    // trying to access original_title in api
+    const displayMovie = () => {
+      const ulElement = document.querySelector('.test-ul');
+      ulElement.innerHTML = '';
+      const liElement = document.createElement('li');
+      liElement.innerHTML = `<h2>${movieTitle}</h2>`
+      const pElement = document.createElement('p');
+      pElement.innerHTML = `<p>${movieOverview}`
+      const imgElement = document.createElement('img');
+      imgElement.innerHTML = `<img>${moviePoster}`
+      // image.src = moviePoster;
+      console.log(moviePoster)
+      // liElement.innerHTML = `<h2></h2>`
+      // approve is displaying content, but not the content we want! 
+      ulElement.appendChild(liElement);
+      ulElement.appendChild(pElement);
+      ulElement.appendChild(imgElement);
+    }
+
+    displayMovie();
   })
   // WE DID IT YYAAAAYYYY (almost...)
   
@@ -140,16 +164,17 @@ movieApp.getMovieData = () => {
 // Decide what content goes in our liELement
 // place movieTitle variable in h2 to appear on page.
 
-movieApp.displayMovie = () => {
-  const ulElement = document.querySelector('.test-ul');
-  ulElement.innerHTML = '';
-  const liElement = document.createElement('li');
-  liElement.innerHTML = `<h2>hello world</h2>`
-  // approve is displaying content, but not the content we want! 
-  ulElement.appendChild(liElement);
-}
+// movieApp.displayMovie = () => {
+//   const ulElement = document.querySelector('.test-ul');
+//   ulElement.innerHTML = '';
+//   const liElement = document.createElement('li');
+//   liElement.innerHTML = `<h2>hello world</h2>`
+//   liElement.innerHTML = `<h2></h2>`
+//   // approve is displaying content, but not the content we want! 
+//   ulElement.appendChild(liElement);
+// }
 
-movieApp.displayMovie();
+// movieApp.displayMovie();
 
 // consider using filter() and forEach loop to more accurately target information
 // try filtering by movieTitle or id
