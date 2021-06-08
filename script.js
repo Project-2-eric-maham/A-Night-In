@@ -35,40 +35,75 @@
 // do we need to namespace now???
 const movieApp = {};
 
+// storing our url and apikey in global variables 
+movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
+movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
+
+// if this does not work, check for ? between url and api_key
+
 movieApp.getMovieData = () => {
 
+  // PSSSUUUEEEDDDOOOO
+  // use url constructor 
+  // pass in apikey as api_key
+  const apiUrl = new URL(movieApp.url)
+  apiUrl.search = new URLSearchParams( {
+    api_key: movieApp.apikey 
+  })
+  // use fetch to make the api request 
+  fetch(apiUrl)
+  .then((results) => {
+    return results.json()
+  })
+  .then((jsonResults) => {
+    // movieApp.getMovieData(jsonResults)
+    console.log(jsonResults)
+  })
+  // WE DID IT YYAAAAYYYY (almost...)
+  
+  // if there is trouble, try removing the extra brackets ^^^^
+
+}
+
+
+
 // create variable for base URL & access key
-movieApp.url = ``
+
 
 
 // feting the API
-  fetch('https://api.themoviedb.org/3/movie/550?api_key=a0e32a4a0c009553ac6020779811cc03')
-    .then((results) => {
-      return results.json()
-      // console.log(results)
-    })
-    .then((object) => {
-      console.log(object)
-    // trying to put original_title on the home page
-    // go inside of our object
-    // get original_title
-    // create element for original_title (<h2>)
-    // append it the page
-    const movieTitle = object.original_title;
-    const movieOverview = object.overview;
-    const movieHomepage = object.homepage;
-    const moviePoster = object.poster_path;
-    const movieDuration = object.runtime;
-    // document.querySelector('h2') = movieData;
-    console.log(movieTitle);
-    console.log(movieHomepage);
-    console.log(movieOverview);
-    console.log(moviePoster);
-    console.log(movieDuration);
-    // object.original_title;
-    // document.createElement('h2') = movieTitle;
-  })
-}
+//   fetch('https://api.themoviedb.org/3/discover/movie/?api_key=a0e32a4a0c009553ac6020779811cc03')
+//   // endpoint was changed to discover 
+//     .then((results) => {
+//       return results.json()
+//       // console.log(results)
+//     })
+//     .then((object) => {
+//       console.log(object)
+//     // trying to put original_title on the home page
+//     // go inside of our object
+//     // get original_title
+//     // create element for original_title (<h2>)
+//     // append it the page
+//     const movieTitle = object.original_title;
+//     const movieOverview = object.overview;
+//     const movieHomepage = object.homepage;
+//     const moviePoster = object.poster_path;
+//     const movieDuration = object.runtime;
+//     // document.querySelector('h2') = movieData;
+//     console.log(movieTitle);
+//     console.log(movieHomepage);
+//     console.log(movieOverview);
+//     console.log(moviePoster);
+//     console.log(movieDuration);
+//     // object.original_title;
+//     // document.createElement('h2') = movieTitle;
+//   })
+// }
+
+// make query params
+// genre
+// one for runtime ><
 
 // ?_?
 
@@ -103,7 +138,7 @@ movieApp.displayMovie = () => {
   const ulElement = document.querySelector('.test-ul');
   ulElement.innerHTML = '';
   const liElement = document.createElement('li');
-  liElement.innerHTML = `<h2>${movieApp.getMovieData.movieTitle}</h2>`
+  liElement.innerHTML = `<h2>hello world</h2>`
   // approve is displaying content, but not the content we want! 
   ulElement.appendChild(liElement);
 }
