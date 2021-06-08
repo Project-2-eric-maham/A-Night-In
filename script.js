@@ -62,8 +62,21 @@ movieApp.getMovieData = () => {
   .then((jsonResults) => {
     // movieApp.getMovieData(jsonResults)
     console.log(jsonResults)
-    console.log(jsonResults.object)
-    
+    console.log(jsonResults.results[0].original_title);
+    // defining movieTitle globally
+    const movieTitle = jsonResults.results[0].original_title;
+
+    const displayMovie = () => {
+      const ulElement = document.querySelector('.test-ul');
+      ulElement.innerHTML = '';
+      const liElement = document.createElement('li');
+      liElement.innerHTML = `<h2>${movieTitle}</h2>`
+      // liElement.innerHTML = `<h2></h2>`
+      // approve is displaying content, but not the content we want! 
+      ulElement.appendChild(liElement);
+    }
+
+    displayMovie();
   })
   // WE DID IT YYAAAAYYYY (almost...)
   
@@ -140,16 +153,17 @@ movieApp.getMovieData = () => {
 // Decide what content goes in our liELement
 // place movieTitle variable in h2 to appear on page.
 
-movieApp.displayMovie = () => {
-  const ulElement = document.querySelector('.test-ul');
-  ulElement.innerHTML = '';
-  const liElement = document.createElement('li');
-  liElement.innerHTML = `<h2>hello world</h2>`
-  // approve is displaying content, but not the content we want! 
-  ulElement.appendChild(liElement);
-}
+// movieApp.displayMovie = () => {
+//   const ulElement = document.querySelector('.test-ul');
+//   ulElement.innerHTML = '';
+//   const liElement = document.createElement('li');
+//   liElement.innerHTML = `<h2>hello world</h2>`
+//   liElement.innerHTML = `<h2></h2>`
+//   // approve is displaying content, but not the content we want! 
+//   ulElement.appendChild(liElement);
+// }
 
-movieApp.displayMovie();
+// movieApp.displayMovie();
 
 // consider using filter() and forEach loop to more accurately target information
 // try filtering by movieTitle or id
