@@ -9,7 +9,8 @@ $base-text: 'PT Serif', serif;
 @mixin logo ($size) {
     font-family: $font-logo;
     font-size: ($size);
-    margin: 2rem 0;
+    // margin: 2rem 0;
+    padding: 2rem 0;
 }
 
 @mixin heading-style ($size) {

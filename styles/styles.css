@@ -237,7 +237,7 @@ html {
 
 p {
   font-family: "PT Serif", serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .wrapper {
@@ -262,7 +262,8 @@ li,
 a,
 p,
 h2,
-h1 {
+h1,
+h3 {
   margin: 0;
   padding: 0;
   color: #f0e6d3;
@@ -278,9 +279,14 @@ body {
 
 .logo {
   font-family: "Bungee Shade", cursive;
-  font-size: 2.5rem;
-  margin: 2rem 0;
+  font-size: 4rem;
+  padding: 2rem 0;
   text-align: center;
+  color: black;
+}
+
+header {
+  background-color: ivory;
 }
 
 .description h2 {
@@ -291,6 +297,23 @@ body {
   text-align: center;
 }
 
-form {
+h3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-family: "Righteous", cursive;
+}
+
+.dynamic-content .wrapper {
   display: grid;
+  gap: 1rem;
+}
+.dynamic-content .wrapper h3 {
+  grid-row: 1;
+  text-align: center;
+}
+.dynamic-content .wrapper p {
+  grid-row: 2;
+}
+.dynamic-content .wrapper img {
+  grid-row: 3;
 }

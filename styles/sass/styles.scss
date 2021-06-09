@@ -7,7 +7,7 @@
 // *******************************
 
 p {
-    @include base-styling(1.3rem);
+    @include base-styling(1.2rem);
 }
 
 .wrapper {
@@ -30,7 +30,8 @@ li,
 a, 
 p, 
 h2, 
-h1 {
+h1,
+h3 {
     margin: 0;
     padding: 0;
     color: rgb(240, 230, 211);
@@ -51,8 +52,15 @@ body {
 // ********************************
 
 .logo {
-    @include logo(2.5rem);
-    text-align: center
+    @include logo(4rem);
+    text-align: center;
+    color: black;
+    // try to make this a gradient???
+    
+}
+
+header {
+    background-color: ivory;
 }
 
 
@@ -65,7 +73,47 @@ body {
     text-align: center;
 }
 
-
-form {
-    display: grid;
+h3 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: $heading-logo;
 }
+
+/// *******************************
+//         form styling
+// ********************************
+
+
+// form {
+//     display: grid;
+// }
+
+/// *******************************
+//         .dynamic styling
+// ********************************
+
+
+
+.dynamic-content {
+    .wrapper{
+        display: grid;
+        // grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        h3 {
+            grid-row: 1;
+            text-align: center;
+        }
+        p {
+            grid-row: 2;
+        }
+        img {
+            grid-row: 3;
+        }
+    }
+}
+
+// on mobile, display in following order
+// title, overview, poster
+// stack vertically with a grid
+// style h3
+// resize img

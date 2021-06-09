@@ -74,11 +74,11 @@ movieApp.getMovieData = () => {
     // trying to access original_title in api
 
     const displayMovie = () => {
-      const ulElement = document.querySelector('.test-ul');
-      ulElement.innerHTML = '';
+      const firstPref = document.querySelector('#first-choice');
+      firstPref.innerHTML = '';
 
-      const liElement = document.createElement('li');
-      liElement.innerHTML = `${movieTitle}`
+      const h3Element = document.createElement('h3');
+      h3Element.innerHTML = `${movieTitle}`
 
       const pElement = document.createElement('p');
       pElement.innerHTML = `${movieOverview}`
@@ -92,14 +92,14 @@ movieApp.getMovieData = () => {
 
       // image.src = moviePoster;
       console.log(moviePoster)
-      // liElement.innerHTML = `<h2></h2>`
+      // h3Element.innerHTML = `<h2></h2>`
       // approve is displaying content, but not the content we want! 
-      ulElement.appendChild(liElement);
-      ulElement.appendChild(pElement);
-      ulElement.appendChild(imgElement);
-      // liElement.innerHTML = `<h2></h2>`
+      firstPref.appendChild(h3Element);
+      firstPref.appendChild(pElement);
+      firstPref.appendChild(imgElement);
+      // h3Element.innerHTML = `<h2></h2>`
       // approve is displaying content, but not the content we want! 
-      ulElement.appendChild(liElement);
+      firstPref.appendChild(h3Element);
     }
 
     displayMovie();
@@ -173,20 +173,20 @@ movieApp.getMovieData = () => {
 // ^^trying to access movieTitle in global namespace comes back undefined
 
 // create function to display a piece of movie information
-// create a variable to target our ulElement
+// create a variable to target our firstPref
 // clear out the html content of our ul (for future appending)
-// create an liElement to append content to
-// Decide what content goes in our liELement
+// create an h3Element to append content to
+// Decide what content goes in our h3Element
 // place movieTitle variable in h2 to appear on page.
 
 // movieApp.displayMovie = () => {
-//   const ulElement = document.querySelector('.test-ul');
-//   ulElement.innerHTML = '';
-//   const liElement = document.createElement('li');
-//   liElement.innerHTML = `<h2>hello world</h2>`
-//   liElement.innerHTML = `<h2></h2>`
+//   const firstPref = document.querySelector('.test-ul');
+//   firstPref.innerHTML = '';
+//   const h3Element = document.createElement('li');
+//   h3Element.innerHTML = `<h2>hello world</h2>`
+//   h3Element.innerHTML = `<h2></h2>`
 //   // approve is displaying content, but not the content we want! 
-//   ulElement.appendChild(liElement);
+//   firstPref.appendChild(h3Element);
 // }
 
 // movieApp.displayMovie();

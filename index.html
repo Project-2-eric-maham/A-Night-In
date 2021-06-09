@@ -33,53 +33,51 @@
     </section>
 
     <section class="form"> <!-- form starts -->
-      <form action="submit">
-        <fieldset>
-          <select name="duration" id="duration">
-            <option value="minutes" disabled>Minutes</option>
-            <option value="60">60</option>
-            <!-- sort duration options 60,75,90 105, 120 upto 180 (I have all the time in the world show me your longest movie)-->
-            <!-- start with short, medium, long -->
-            <!-- could use range slider, but not ideal -->
-            <!-- esther does not like range sliders -->
-
-            <!-- will need to add more options -->
-            <!-- consider user input and how to sanitize data -->
-          </select>
-          
-          <select name="genre" id="genre">
-            <option value="action">Action</option>
-            <option value="adventure">Adventure</option>
-            <option value="animation">Animation</option>
-            <option value="comedy">Comedy</option>
-            <option value="crime">Crime</option>
-            <option value="documentary">Documentary</option>
-            <option value="drama">Drama</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="history">History</option>
-            <option value="horror">Horror</option>
-            <option value="music">Music</option>
-            <option value="mystery">Mystery</option>
-            <option value="romance">Romance</option>
-            <option value="Sci-fi">Sci-fi</option>
-            <option value="tv-movie">Tv Movie</option>
-            <option value="thriller">Thriller</option>
-            <option value="war">War</option>
-            <option value="western">Western</option>
-            <!-- consider this as radio buttons -->
-            <!-- check if api lists multiple genres to allow multiple selections -->
-          </select>
-        </fieldset>
-        <button type="submit">I sure hope it's Harry Potter...</button>
-      </form> <!-- form ends -->
+      <div class="wrapper">
+        <form action="submit">
+          <fieldset>
+            <select name="duration" id="duration">
+              <option value="minutes" disabled>Minutes</option>
+              <option value="60">60</option>
+              <!-- sort duration options 60,75,90 105, 120 upto 180 (I have all the time in the world show me your longest movie)-->
+              <!-- start with short, medium, long -->
+              <!-- could use range slider, but not ideal -->
+              <!-- esther does not like range sliders -->
+        
+              <!-- will need to add more options -->
+              <!-- consider user input and how to sanitize data -->
+            </select>
+        
+            <select name="genre" id="genre">
+              <option value="action">Action</option>
+              <option value="adventure">Adventure</option>
+              <option value="animation">Animation</option>
+              <option value="comedy">Comedy</option>
+              <option value="crime">Crime</option>
+              <option value="documentary">Documentary</option>
+              <option value="drama">Drama</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="history">History</option>
+              <option value="horror">Horror</option>
+              <option value="music">Music</option>
+              <option value="mystery">Mystery</option>
+              <option value="romance">Romance</option>
+              <option value="Sci-fi">Sci-fi</option>
+              <option value="tv-movie">Tv Movie</option>
+              <option value="thriller">Thriller</option>
+              <option value="war">War</option>
+              <option value="western">Western</option>
+              <!-- consider this as radio buttons -->
+              <!-- check if api lists multiple genres to allow multiple selections -->
+            </select>
+          </fieldset>
+          <button type="submit">I sure hope it's Harry Potter...</button>
+        </form> <!-- form ends -->
+      </div>
     </section>
 
     <section class="dynamic-content">
       <div class="wrapper" id="first-choice">
-
-        <ul class = "test-ul">
-          
-        </ul>
       </div>
     </section>
   </main> <!-- main ends -->
