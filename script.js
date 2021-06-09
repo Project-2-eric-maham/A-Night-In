@@ -110,8 +110,25 @@ movieApp.getMovieData = () => {
   
 }
 
-// console.log(movieApp.getMovieData[Object.results[0]])
+// Accept input from multiple genres and single duration
+// assign genre name to genre id
+// on submit collect/listen for genre id selection 
+// put selected genere id into our initial searchParam
+// review error handling for selecting same genre
 
+// logic for duration
+// user select from 3 option
+//  Short has a value of 90 mins
+//  long has a value of 120mins
+//  longest --->>> 120+
+//  for short and long run selection with_runtime.lte
+// for longest with_runtimr.gte
+
+
+
+
+
+// console.log(movieApp.getMovieData[Object.results[0]])
 // create variable for base URL & access key
 
 
