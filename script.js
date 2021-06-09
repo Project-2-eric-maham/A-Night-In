@@ -82,8 +82,16 @@ movieApp.displayMovie = (jsonResults) => {
   firstPref.appendChild(imgElement);    
 }
 
+movieApp.setUpEventListeners = function(){
+  document.querySelector('#genre').addEventListener.onsubmit('submit', function(event){
+    event.preventDefault();
+    console.log(this.value);
+  })
+}
+
 movieApp.init = () => {
   movieApp.getMovieData();
+  movieApp.setUpEventListeners();
 };
 
 movieApp.init();
