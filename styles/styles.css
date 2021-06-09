@@ -303,6 +303,10 @@ h3 {
   font-family: "Righteous", cursive;
 }
 
+form {
+  background-color: burlywood;
+}
+
 .dynamic-content .wrapper {
   display: grid;
   gap: 1rem;

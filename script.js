@@ -50,7 +50,7 @@ movieApp.getMovieData = () => {
   apiUrl.search = new URLSearchParams( {
     api_key: movieApp.apikey,
     // defining search parameters for genre & runtime (eventually)
-    with_genres: '18, 35',
+    with_genres: '35',
     
     // with_runtime:lte: 120
     // ^^getting unknown error
