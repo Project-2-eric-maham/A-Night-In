@@ -30,19 +30,15 @@
 
 
 
-// ACTUAL CODE STARTS HERE!!1
+// ACTUAL CODE STARTS HERE!!
 
-// do we need to namespace now???
 const movieApp = {};
 
 // storing our url and apikey in global variables 
 movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
 
-// if this does not work, check for ? between url and api_key
-// /bT3c4TSOP8vBmMoXZRDPTII6eDa.jpg
 movieApp.getMovieData = () => {
-
   // PSSSUUUEEEDDDOOOO
   // use url constructor 
   // pass in apikey as api_key
@@ -51,7 +47,6 @@ movieApp.getMovieData = () => {
     api_key: movieApp.apikey,
     // defining search parameters for genre & runtime (eventually)
     with_genres: '35',
-    
     // with_runtime:lte: 120
     // ^^getting unknown error
   })
@@ -62,52 +57,52 @@ movieApp.getMovieData = () => {
   })
   .then((jsonResults) => {
     // movieApp.getMovieData(jsonResults)
-    console.log(jsonResults)
-    console.log(jsonResults.results[0].original_title);
-    // defining movieTitle globally
-    const movieTitle = jsonResults.results[0].original_title;
-    const movieOverview = jsonResults.results[0].overview;
-    const moviePoster = jsonResults.results[0].poster_path;
-    const posterUrl = `https://image.tmdb.org/t/p/original`
 
-
-    // trying to access original_title in api
-
-    const displayMovie = () => {
-      const firstPref = document.querySelector('#first-choice');
-      firstPref.innerHTML = '';
-
-      const h3Element = document.createElement('h3');
-      h3Element.innerHTML = `${movieTitle}`
-
-      const pElement = document.createElement('p');
-      pElement.innerHTML = `${movieOverview}`
-
-      const imgElement = document.createElement('img');
-      // img.src = `${posterUrl}+${moviePoster}`;
-      imgElement.src = posterUrl + moviePoster;
-      // img.alt = 
-      imgElement.innerHTML = ``;
-      console.log(imgElement);
-
-      // image.src = moviePoster;
-      console.log(moviePoster)
-      // h3Element.innerHTML = `<h2></h2>`
-      // approve is displaying content, but not the content we want! 
-      firstPref.appendChild(h3Element);
-      firstPref.appendChild(pElement);
-      firstPref.appendChild(imgElement);
-      // h3Element.innerHTML = `<h2></h2>`
-      // approve is displaying content, but not the content we want! 
-      firstPref.appendChild(h3Element);
-    }
-
-    displayMovie();
+    movieApp.displayMovie(jsonResults.results);
+    console.log(jsonResults.results)
   })
   // WE DID IT YYAAAAYYYY (almost...)
   
   // if there is trouble, try removing the extra brackets ^^^^
   
+}
+movieApp.displayMovie = () => {
+  // console.log(jsonResults)
+  //   console.log(jsonResults.results[0].original_title);
+    // defining movieTitle globally
+  const movieTitle = jsonResults.results[0].original_title;
+  const movieOverview = jsonResults.results[0].overview;
+  const moviePoster = jsonResults.results[0].poster_path;
+  const posterUrl = `https://image.tmdb.org/t/p/original`
+
+
+    // trying to access original_title in api
+  const firstPref = document.querySelector('#first-choice');
+  firstPref.innerHTML = '';
+
+  const h3Element = document.createElement('h3');
+  h3Element.innerHTML = `${movieTitle}`
+
+  const pElement = document.createElement('p');
+  pElement.innerHTML = `${movieOverview}`
+
+  const imgElement = document.createElement('img');
+  // img.src = `${posterUrl}+${moviePoster}`;
+  imgElement.src = posterUrl + moviePoster;
+  // img.alt = 
+  imgElement.innerHTML = ``;
+  console.log(imgElement);
+
+  // image.src = moviePoster;
+  console.log(moviePoster)
+  // h3Element.innerHTML = `<h2></h2>`
+  // approve is displaying content, but not the content we want! 
+  firstPref.appendChild(h3Element);
+  firstPref.appendChild(pElement);
+  firstPref.appendChild(imgElement);
+  // h3Element.innerHTML = `<h2></h2>`
+  // approve is displaying content, but not the content we want! 
+  firstPref.appendChild(h3Element);
 }
 
 // Accept input from multiple genres and single duration
