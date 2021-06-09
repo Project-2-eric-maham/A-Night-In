@@ -51,6 +51,7 @@ movieApp.getMovieData = () => {
     api_key: movieApp.apikey,
     // defining search parameters for genre & runtime (eventually)
     with_genres: '18, 35',
+    
     // with_runtime:lte: 120
     // ^^getting unknown error
   })
@@ -67,18 +68,28 @@ movieApp.getMovieData = () => {
     const movieTitle = jsonResults.results[0].original_title;
     const movieOverview = jsonResults.results[0].overview;
     const moviePoster = jsonResults.results[0].poster_path;
+    const posterUrl = `https://image.tmdb.org/t/p/original`
+
 
     // trying to access original_title in api
 
     const displayMovie = () => {
       const ulElement = document.querySelector('.test-ul');
       ulElement.innerHTML = '';
+
       const liElement = document.createElement('li');
-      liElement.innerHTML = `<h2>${movieTitle}</h2>`
+      liElement.innerHTML = `${movieTitle}`
+
       const pElement = document.createElement('p');
-      pElement.innerHTML = `<p>${movieOverview}`
+      pElement.innerHTML = `${movieOverview}`
+
       const imgElement = document.createElement('img');
-      imgElement.innerHTML = `<img>${moviePoster}`
+      // img.src = `${posterUrl}+${moviePoster}`;
+      imgElement.src = posterUrl + moviePoster;
+      // img.alt = 
+      imgElement.innerHTML = ``;
+      console.log(imgElement);
+
       // image.src = moviePoster;
       console.log(moviePoster)
       // liElement.innerHTML = `<h2></h2>`
