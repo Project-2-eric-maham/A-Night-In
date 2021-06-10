@@ -38,25 +38,28 @@ const movieApp = {};
 movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
 
-movieApp.getMovieData = () => {
+movieApp.getMovieData = (genreChoice) => {
   // use url constructor 
   // pass in apikey as api_key
   const apiUrl = new URL(movieApp.url)
   apiUrl.search = new URLSearchParams( {
     api_key: movieApp.apikey,
     // defining search parameters for genre & runtime (eventually)
-    with_genres: '35',
+    with_genres: genreChoice,
+    // with_runtime: {
+    //   gte: 180,
+    // }
   })
-  
   fetch(apiUrl)
   .then((results) => {
     return results.json()
   })
   .then((jsonResults) => {
     movieApp.displayMovie(jsonResults);
+    console.log(jsonResults);
   })
 }
-
+// console.log(movieApp.getMovieData);
 movieApp.displayMovie = (jsonResults) => {
 
   const movieTitle = jsonResults.results[0].original_title;
@@ -83,9 +86,12 @@ movieApp.displayMovie = (jsonResults) => {
 }
 
 movieApp.setUpEventListeners = function(){
-  document.querySelector('#genre').addEventListener.onsubmit('submit', function(event){
+  document.querySelector('#form').addEventListener('submit', function(event){
     event.preventDefault();
-    console.log(this.value);
+    // on submit targeting gnere and duration within the form
+    console.log(genre.value);
+    console.log(form.duration.value);
+    movieApp.getMovieData(genre.value);
   })
 }
 
