@@ -38,7 +38,9 @@ const movieApp = {};
 movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
 
-movieApp.getMovieData = (genreChoice, testtime) => {
+movieApp.getMovieData = (genreChoice = 878, duration = 400) => {
+  // pass in default value for genreChoice & testTime
+
   // use url constructor 
   // pass in apikey as api_key
   const apiUrl = new URL(movieApp.url)
@@ -49,18 +51,20 @@ movieApp.getMovieData = (genreChoice, testtime) => {
     // with_runtime: {
     //   gte: testtime,
     // }
-    // "with_runtime.lte": testtime
+    "with_runtime.lte": duration
   })
   fetch(apiUrl)
   .then((results) => {
     return results.json()
   })
   .then((jsonResults) => {
-    movieApp.displayMovie(jsonResults);
     console.log(jsonResults);
-    console.log(movieApp.testtime)
+    movieApp.displayMovie(jsonResults);
+    // console.log(movieApp.testtime)
   })
 }
+
+// provide default value to "testTime"
 
 // runTime logic! 
 // display movies where runTime is equal to or less than user input
@@ -82,8 +86,8 @@ movieApp.getMovieData = (genreChoice, testtime) => {
 movieApp.displayMovie = (jsonResults) => {
 
   const randomInteger =
-    Math.floor(Math.random() * 20);
-  
+    Math.floor(Math.random() * jsonResults.results.length);
+  console.log(jsonResults)
 
   console.log(randomInteger);
 
@@ -92,11 +96,10 @@ movieApp.displayMovie = (jsonResults) => {
   // const moviePoster = jsonResults.results[0].poster_path;
 
   const movieTitle = jsonResults.results[randomInteger].original_title;
+  console.log(movieTitle)
   const movieOverview = jsonResults.results[randomInteger].overview;
   const moviePoster = jsonResults.results[randomInteger].poster_path;
   const posterUrl = `https://image.tmdb.org/t/p/original`
-
-  
   
   const firstPref = document.querySelector('#first-choice');
   firstPref.innerHTML = '';
@@ -122,13 +125,13 @@ movieApp.setUpEventListeners = function(){
     // on submit targeting gnere and duration within the form
     console.log(genre.value);
     console.log(form.duration.value);
-    movieApp.getMovieData(genre.value);
-    movieApp.getMovieData(form.duration.value)
+    movieApp.getMovieData(genre.value, form.duration.value);
   })
 }
 
 movieApp.init = () => {
-  movieApp.getMovieData();
+  // movieApp.getMovieData();
+  // movieApp.getMovieData does not need to exist on load, since we are loading information on submit
   movieApp.setUpEventListeners();
 };
 
