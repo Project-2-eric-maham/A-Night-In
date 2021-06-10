@@ -49,6 +49,7 @@ movieApp.getMovieData = (genreChoice) => {
     // with_runtime: {
     //   gte: 180,
     // }
+    
   })
   fetch(apiUrl)
   .then((results) => {
@@ -60,11 +61,31 @@ movieApp.getMovieData = (genreChoice) => {
   })
 }
 // console.log(movieApp.getMovieData);
+
+
+
+// MATH LOGIC
+// display random movie from array of results on page 1
+// target results array with a number/value between 0-19
+// 
+
+
 movieApp.displayMovie = (jsonResults) => {
+
+  // let index1 = Math.floor(Math.random() * results.length);
+  const randomInteger =
+    Math.floor(Math.random() * 20);
+  
+
+  console.log(randomInteger);
 
   const movieTitle = jsonResults.results[0].original_title;
   const movieOverview = jsonResults.results[0].overview;
   const moviePoster = jsonResults.results[0].poster_path;
+
+  // const movieTitle = jsonResults.results[randomInteger].original_title;
+  // const movieOverview = jsonResults.results[randomInteger].overview;
+  // const moviePoster = jsonResults.results[randomInteger].poster_path;
   const posterUrl = `https://image.tmdb.org/t/p/original`
   
   const firstPref = document.querySelector('#first-choice');
