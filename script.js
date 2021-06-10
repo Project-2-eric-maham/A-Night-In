@@ -49,6 +49,7 @@ movieApp.getMovieData = (genreChoice, testtime) => {
     // with_runtime: {
     //   gte: testtime,
     // }
+    // "with_runtime.lte": testtime
   })
   fetch(apiUrl)
   .then((results) => {
@@ -61,6 +62,15 @@ movieApp.getMovieData = (genreChoice, testtime) => {
   })
 }
 
+// runTime logic! 
+// display movies where runTime is equal to or less than user input
+// if (runTime <= 90) {
+
+// }
+
+
+
+
 // console.log(movieApp.getMovieData);
 
 // MATH LOGIC
@@ -71,7 +81,6 @@ movieApp.getMovieData = (genreChoice, testtime) => {
 
 movieApp.displayMovie = (jsonResults) => {
 
-  // let index1 = Math.floor(Math.random() * results.length);
   const randomInteger =
     Math.floor(Math.random() * 20);
   
@@ -86,6 +95,8 @@ movieApp.displayMovie = (jsonResults) => {
   const movieOverview = jsonResults.results[randomInteger].overview;
   const moviePoster = jsonResults.results[randomInteger].poster_path;
   const posterUrl = `https://image.tmdb.org/t/p/original`
+
+  
   
   const firstPref = document.querySelector('#first-choice');
   firstPref.innerHTML = '';
@@ -112,6 +123,7 @@ movieApp.setUpEventListeners = function(){
     console.log(genre.value);
     console.log(form.duration.value);
     movieApp.getMovieData(genre.value);
+    movieApp.getMovieData(form.duration.value)
   })
 }
 
