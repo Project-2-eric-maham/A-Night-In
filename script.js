@@ -38,7 +38,7 @@ const movieApp = {};
 movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
 
-movieApp.getMovieData = (genreChoice) => {
+movieApp.getMovieData = (genreChoice, testtime) => {
   // use url constructor 
   // pass in apikey as api_key
   const apiUrl = new URL(movieApp.url)
@@ -47,9 +47,8 @@ movieApp.getMovieData = (genreChoice) => {
     // defining search parameters for genre & runtime (eventually)
     with_genres: genreChoice,
     // with_runtime: {
-    //   gte: 180,
+    //   gte: testtime,
     // }
-    
   })
   fetch(apiUrl)
   .then((results) => {
@@ -58,11 +57,11 @@ movieApp.getMovieData = (genreChoice) => {
   .then((jsonResults) => {
     movieApp.displayMovie(jsonResults);
     console.log(jsonResults);
+    console.log(movieApp.testtime)
   })
 }
+
 // console.log(movieApp.getMovieData);
-
-
 
 // MATH LOGIC
 // display random movie from array of results on page 1
@@ -79,13 +78,13 @@ movieApp.displayMovie = (jsonResults) => {
 
   console.log(randomInteger);
 
-  const movieTitle = jsonResults.results[0].original_title;
-  const movieOverview = jsonResults.results[0].overview;
-  const moviePoster = jsonResults.results[0].poster_path;
+  // const movieTitle = jsonResults.results[0].original_title;
+  // const movieOverview = jsonResults.results[0].overview;
+  // const moviePoster = jsonResults.results[0].poster_path;
 
-  // const movieTitle = jsonResults.results[randomInteger].original_title;
-  // const movieOverview = jsonResults.results[randomInteger].overview;
-  // const moviePoster = jsonResults.results[randomInteger].poster_path;
+  const movieTitle = jsonResults.results[randomInteger].original_title;
+  const movieOverview = jsonResults.results[randomInteger].overview;
+  const moviePoster = jsonResults.results[randomInteger].poster_path;
   const posterUrl = `https://image.tmdb.org/t/p/original`
   
   const firstPref = document.querySelector('#first-choice');
