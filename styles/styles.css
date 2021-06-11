@@ -266,7 +266,7 @@ h1,
 h3 {
   margin: 0;
   padding: 0;
-  color: #f0e6d3;
+  color: #F7FCFE;
 }
 
 body {
@@ -282,11 +282,14 @@ body {
   font-size: 4rem;
   padding: 2rem 0;
   text-align: center;
-  color: black;
+  background: -webkit-gradient(linear, left top, right top, from(#30CFD0), to(#0c0661));
+  background: linear-gradient(to right, #30CFD0 0%, #0c0661 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header {
-  background-color: ivory;
+  background: #F7FCFE;
 }
 
 .description h2 {
@@ -295,6 +298,10 @@ header {
   font-size: 2rem;
   margin: 2rem 0;
   text-align: center;
+  color: #06397c;
+  background: -webkit-gradient(linear, left top, right top, from(#FDFBFB), color-stop(70%, #EBEDEE));
+  background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
+  opacity: 0.9;
 }
 
 h3 {
@@ -304,7 +311,12 @@ h3 {
 }
 
 form {
-  background-color: burlywood;
+  margin-top: 30px;
+  background-color: #a8c4cf;
+}
+
+button {
+  margin: 10px;
 }
 
 .dynamic-content .wrapper {
