@@ -109,6 +109,26 @@ h3 {
     }
 }
 
+.select {
+    padding: 12px 30px;
+    // border: 1.5px solid transparent;
+    // border-radius: 8px;
+    cursor: pointer;
+    // appearance: none;
+    option {
+        background: #EBEDEE;
+    }
+    i {
+        font-size: 20px;
+        color: #0c0661;
+    }
+}
+
+// .select:hover,
+// .select:focus {
+//     // border: 1.5px solid rgb(43, 42, 42);
+// }
+
 button {
     margin: 10px;
 }
@@ -132,8 +152,7 @@ button {
         }
         img {
             grid-row: 3;
-            border: 3px dotted #a8c4cf;
-            box-shadow: 0 0 5px 5px #0ff;
+            box-shadow: 0 0 15px 5px  #0ff;
         }
     }
 }

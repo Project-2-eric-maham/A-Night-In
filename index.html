@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Happy+Monkey&family=Righteous&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./styles/styles.css">
+  <script src="https://kit.fontawesome.com/822dbbb668.js" crossorigin="anonymous"></script>
   <title>Testing API</title>
 </head>
 <body>
@@ -27,6 +28,7 @@
         odio cupiditate illum quidem, voluptates, praesentium perferendis officiis, non perspiciatis totam amet. Assumenda
         adipisci culpa rerum delectus dolorem minus sed sunt quae non quia tenetur reprehenderit, vel officia illum ratione.
         Nihil accusamus libero impedit.</p>
+        <p><i class="fa-solid fa-caret-down"></i></p>
       </div>
       
     </section>
@@ -35,8 +37,11 @@
       <div class="wrapper">
         <form action="submit" id="form">
           <fieldset>
-            <input type="radio" name="duration" id="short" value="90">
-            <label for="short">Short</label>
+            <legend>How long of a movie would you like to watch?</legend>
+            <label for="short">
+              <input type="radio" name="duration" id="short" value="90">
+              Short
+            </label>
             <input type="radio" name="duration" id="long" value="120">
             <label for="long">Long</label>
             <input type="radio" name="duration" id="longest" value="180">
@@ -51,7 +56,10 @@
               <!-- consider user input and how to sanitize data -->
 
             <label for= "genre"></label>
-            <select name="genre" id="genre">
+            <legend>What type of movie would you like to watch?</legend>
+            <select name="genre" id="genre" class= "select">
+              <option value="" disabled selected>Genre<i class="fa-solid fa-caret-down"></i>
+              </option>
               <option value="28">Action</option>
               <option value="12">Adventure</option>
               <option value="16">Animation</option>
