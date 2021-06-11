@@ -64,9 +64,7 @@ movieApp.getMovieData = (genreChoice, testtime) => {
 
 // runTime logic! 
 // display movies where runTime is equal to or less than user input
-// if (runTime <= 90) {
-
-// }
+// if (runTime <= 90) {}
 
 
 
@@ -124,6 +122,10 @@ movieApp.setUpEventListeners = function(){
     console.log(form.duration.value);
     movieApp.getMovieData(genre.value);
     movieApp.getMovieData(form.duration.value)
+
+    // if (form.duration.value === 90){
+    //   append_to_response(with_runtime.gte)
+    // }
   })
 }
 
