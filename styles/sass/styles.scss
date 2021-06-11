@@ -8,6 +8,7 @@
 
 p {
     @include base-styling(1.2rem);
+    letter-spacing: 1px;
 }
 
 .wrapper {
@@ -57,7 +58,9 @@ body {
     text-align: center;
     background: linear-gradient(to right, #30CFD0 0%, #0c0661 100%);
 	-webkit-background-clip: text;
+    background-clip: none;
 	-webkit-text-fill-color: transparent;
+    // background-image: linear-gradient(to bottom,rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(./assets/film-reel.webp);
     // try to make this a gradient???
     
 }
@@ -85,33 +88,38 @@ h3 {
     font-family: $heading-logo;
 }
 
-/// *******************************
+// *******************************
+//         description styling
+// ********************************
+
+// .description {
+
+// }
+
+// *******************************
 //         form styling
 // ********************************
 
-
-// form {
-//     display: grid;
-// }
-
-form {
+.form form {
     margin-top: 30px;
     background-color: #a8c4cf;
+    border: none;
+    fieldset {
+        border: none;
+    }
 }
 
 button {
     margin: 10px;
-    
 }
 
 /// *******************************
-//         .dynamic-content styling
+//     .dynamic-content styling
 // ********************************
-
-
 
 .dynamic-content {
     .wrapper{
+        padding: 25px 0;
         display: grid;
         // grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
@@ -124,6 +132,8 @@ button {
         }
         img {
             grid-row: 3;
+            border: 3px dotted #a8c4cf;
+            box-shadow: 0 0 5px 5px #0ff;
         }
     }
 }
