@@ -48,9 +48,7 @@ movieApp.getMovieData = (genreChoice = 878, duration = 400) => {
     api_key: movieApp.apikey,
     // defining search parameters for genre & runtime (eventually)
     with_genres: genreChoice,
-    // with_runtime: {
-    //   gte: testtime,
-    // }
+
     "with_runtime.lte": duration
   })
   fetch(apiUrl)
