@@ -8,6 +8,7 @@
 
 p {
     @include base-styling(1.2rem);
+    letter-spacing: 1px;
 }
 
 .wrapper {
@@ -34,7 +35,7 @@ h1,
 h3 {
     margin: 0;
     padding: 0;
-    color: rgb(240, 230, 211);
+    color: #F7FCFE;
 }
 
 // consider turning above into mixins
@@ -53,14 +54,19 @@ body {
 
 .logo {
     @include logo(4rem);
+
     text-align: center;
-    color: black;
+    background: linear-gradient(to right, #30CFD0 0%, #0c0661 100%);
+	-webkit-background-clip: text;
+    background-clip: none;
+	-webkit-text-fill-color: transparent;
+    // background-image: linear-gradient(to bottom,rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(./assets/film-reel.webp);
     // try to make this a gradient???
     
 }
 
 header {
-    background-color: ivory;
+    background: #F7FCFE;
 }
 
 
@@ -71,6 +77,9 @@ header {
 .description h2 {
     @include heading-style(2rem);
     text-align: center;
+    color:#06397c;
+    background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
+    opacity: 0.9;
 }
 
 h3 {
@@ -79,27 +88,58 @@ h3 {
     font-family: $heading-logo;
 }
 
-/// *******************************
+// *******************************
+//         description styling
+// ********************************
+
+// .description {
+
+// }
+
+// *******************************
 //         form styling
 // ********************************
 
+.form form {
+    margin-top: 30px;
+    background-color: #a8c4cf;
+    border: none;
+    fieldset {
+        border: none;
+    }
+}
 
-// form {
-//     display: grid;
+.select {
+    padding: 12px 30px;
+    // border: 1.5px solid transparent;
+    // border-radius: 8px;
+    cursor: pointer;
+    // appearance: none;
+    option {
+        background: #EBEDEE;
+    }
+    i {
+        font-size: 20px;
+        color: #0c0661;
+    }
+}
+
+// .select:hover,
+// .select:focus {
+//     // border: 1.5px solid rgb(43, 42, 42);
 // }
 
-form {
-    background-color: burlywood;
+button {
+    margin: 10px;
 }
 
 /// *******************************
-//         .dynamic styling
+//     .dynamic-content styling
 // ********************************
-
-
 
 .dynamic-content {
     .wrapper{
+        padding: 25px 0;
         display: grid;
         // grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
@@ -112,6 +152,7 @@ form {
         }
         img {
             grid-row: 3;
+            box-shadow: 0 0 15px 5px  #0ff;
         }
     }
 }
