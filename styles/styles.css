@@ -294,6 +294,12 @@ header {
   background: #F7FCFE;
 }
 
+h3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-family: "Righteous", cursive;
+}
+
 .description h2 {
   font-family: "Righteous", cursive;
   text-transform: uppercase;
@@ -306,10 +312,8 @@ header {
   opacity: 0.9;
 }
 
-h3 {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  font-family: "Righteous", cursive;
+fieldset {
+  padding: 0.8rem 0.5rem;
 }
 
 .form form {
@@ -320,21 +324,85 @@ h3 {
 .form form fieldset {
   border: none;
 }
+.form form label {
+  font-family: "Happy Monkey", cursive;
+  font-size: 1rem;
+  padding: 1rem 0;
+}
 
-.select {
-  padding: 12px 30px;
+select {
+  font-size: 1rem;
+  padding: 0.8em;
+  border-radius: 5px;
   cursor: pointer;
+  border: 0;
+  width: 100%;
 }
-.select option {
-  background: #EBEDEE;
+select option {
+  background: #f7fcfe;
 }
-.select i {
-  font-size: 20px;
-  color: #0c0661;
+
+.select-genre,
+.select-duration {
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: #1f6c79;
+  height: 1rem;
+  width: 1rem;
+  height: 100%;
+  width: 5em;
+  pointer-events: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.arrow::before {
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid #EBEDEE;
+  top: 6%;
+}
+
+.arrow::after {
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 1em solid #EBEDEE;
+  top: 37%;
 }
 
 button {
-  margin: 10px;
+  margin-top: 10px;
+  padding: 1em;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  text-transform: capitalize;
+  background-color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+button:focus,
+button:hover {
+  border: 2px solid #1f6c79;
 }
 
 .dynamic-content .wrapper {
@@ -351,28 +419,44 @@ button {
 }
 .dynamic-content .wrapper img {
   grid-row: 3;
+  -webkit-box-shadow: 0 0 15px 5px #0ff;
+          box-shadow: 0 0 15px 5px #0ff;
 }
 
-footer {
+.large-wrapper {
+  max-width: 1200px;
   background-color: #F7FCFE;
+  margin: 0 auto;
+  height: 8vh;
 }
+
 footer .wrapper {
-  min-height: 10vh;
-}
-
-.copyright {
-  color: black;
-}
-
-.tmdb-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
-.tmdb-logo {
-  width: 50px;
-  height: 50px;
-  -webkit-box-shadow: 0 0 15px 5px #0ff;
-          box-shadow: 0 0 15px 5px #0ff;
+footer .text-container {
+  height: calc(70% - 1em);
+  padding: 0.5em;
+}
+footer .image-container {
+  height: calc(30% - 1em);
+  padding-top: 0.5em;
+}
+footer .image-container img {
+  width: 20em;
+}
+footer p {
+  color: black;
+}
+footer a {
+  color: black;
+  text-decoration: none;
 }
