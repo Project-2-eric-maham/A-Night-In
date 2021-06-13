@@ -87,7 +87,7 @@
         .wrapper{
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto 4fr;
-
+            gap: 1.2em;
             h3 {
                 grid-column: 1/4;
                 padding: .5em;
@@ -95,6 +95,9 @@
 
             img {
                 grid-row: 2/4;
+            }
+            p {
+                line-height: 1.25rem;
             }
         }
 
