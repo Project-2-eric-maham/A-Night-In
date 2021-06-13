@@ -236,7 +236,7 @@ html {
 }
 
 p {
-  font-family: "Happy Monkey", cursive;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
@@ -297,11 +297,11 @@ header {
 h3 {
   font-size: 1.6rem;
   text-transform: uppercase;
-  font-family: "Righteous", cursive;
+  font-family: "Bungee", cursive;
 }
 
 .description h2 {
-  font-family: "Righteous", cursive;
+  font-family: "Bungee", cursive;
   text-transform: uppercase;
   font-size: 2rem;
   margin: 2rem 0;
@@ -310,6 +310,11 @@ h3 {
   background: -webkit-gradient(linear, left top, right top, from(#FDFBFB), color-stop(70%, #EBEDEE));
   background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
   opacity: 0.9;
+  font-weight: 100;
+}
+
+.description-container p {
+  padding: 0.25em 0;
 }
 
 fieldset {
@@ -317,7 +322,7 @@ fieldset {
 }
 
 .form form {
-  margin-top: 30px;
+  margin-top: 2.5em;
   background-color: #a8c4cf;
   border: none;
 }
@@ -325,7 +330,7 @@ fieldset {
   border: none;
 }
 .form form label {
-  font-family: "Happy Monkey", cursive;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   padding: 1rem 0;
 }
@@ -395,7 +400,7 @@ button {
   border-radius: 5px;
   border: 2px solid transparent;
   font-size: 1rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   background-color: #ffffff;
   margin-bottom: 0.5rem;
 }
@@ -403,11 +408,13 @@ button {
 button:focus,
 button:hover {
   border: 2px solid #1f6c79;
+  opacity: 0.8;
 }
 
 .dynamic-content .wrapper {
   padding: 25px 0;
   display: grid;
+  grid-template-rows: auto auto 80em;
   gap: 1rem;
 }
 .dynamic-content .wrapper h3 {
@@ -416,11 +423,14 @@ button:hover {
 }
 .dynamic-content .wrapper p {
   grid-row: 2;
+  padding-bottom: 0.8em;
 }
 .dynamic-content .wrapper img {
   grid-row: 3;
   -webkit-box-shadow: 0 0 15px 5px #0ff;
           box-shadow: 0 0 15px 5px #0ff;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .large-wrapper {
@@ -459,4 +469,83 @@ footer p {
 footer a {
   color: black;
   text-decoration: none;
+}
+
+@media (min-width: 680px) {
+  .logo {
+    font-family: "Bungee Shade", cursive;
+    font-size: 6rem;
+    padding: 2rem 0;
+  }
+
+  .description h2 {
+    font-family: "Bungee", cursive;
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+  }
+
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  fieldset .duration-container {
+    grid-column: 1/4;
+    margin: 1em 0em;
+  }
+  fieldset .genre-container {
+    grid-column: 5/8;
+    margin: 1em 0em;
+  }
+  fieldset .button-container {
+    grid-row: 3;
+    grid-column: 2/7;
+    margin: 1em 0em;
+  }
+
+  .form form label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+  }
+
+  select {
+    font-size: 1.25rem;
+  }
+
+  .arrow::before {
+    top: 13%;
+  }
+
+  .arrow::after {
+    top: 45%;
+  }
+
+  button {
+    font-size: 1.4rem;
+    padding: 0.8em;
+  }
+
+  .dynamic-content .wrapper {
+    padding: 25px 0;
+    display: grid;
+    grid-template-rows: auto auto 80em;
+  }
+  .dynamic-content .wrapper h3 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 800px) {
+  .dynamic-content .wrapper {
+    grid-template-columns: 3fr 4fr;
+    grid-template-rows: auto 4fr;
+  }
+  .dynamic-content .wrapper img {
+    grid-row: 1/4;
+  }
 }

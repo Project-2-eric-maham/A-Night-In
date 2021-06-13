@@ -67,6 +67,7 @@ header {
     background: #F7FCFE;
 }
 
+
 /// *******************************
 //         heading styling
 // ********************************
@@ -87,6 +88,11 @@ h3 {
     color:#06397c;
     background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
     opacity: 0.9;
+    font-weight: 100;
+}
+
+.description-container p {
+    padding: 0.25em 0;
 }
 
 // *******************************
@@ -98,7 +104,7 @@ fieldset {
 }
 
 .form form {
-    margin-top: 30px;
+    margin-top: 2.5em;
     background-color: #a8c4cf;
     border: none;
     fieldset {
@@ -177,7 +183,7 @@ button {
     border-radius: 5px;
     border: 2px solid transparent;
     font-size: 1rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     background-color: #ffffff;
     margin-bottom: .5rem;
 }
@@ -185,6 +191,8 @@ button {
 button:focus,
 button:hover {
     border: 2px solid #1f6c79;
+    opacity: 0.8;
+    // not working???
 } 
 
 /// *******************************
@@ -195,7 +203,7 @@ button:hover {
     .wrapper{
         padding: 25px 0;
         display: grid;
-        // grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto 80em;
         gap: 1rem;
         h3 {
             grid-row: 1;
@@ -203,10 +211,13 @@ button:hover {
         }
         p {
             grid-row: 2;
+            padding-bottom: 0.8em;
         }
         img {
             grid-row: 3;
             box-shadow: 0 0 15px 5px  #0ff;
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 }
@@ -255,3 +266,5 @@ footer {
         text-decoration: none;
     }
 }
+
+@import 'media-queries';

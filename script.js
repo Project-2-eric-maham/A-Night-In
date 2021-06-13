@@ -46,6 +46,7 @@ movieApp.displayMovie = (jsonResults) => {
 
   const imgElement = document.createElement('img');
   imgElement.src = posterUrl + moviePoster;
+  imgElement.alt = `Poster for ${movieTitle}`
   imgElement.innerHTML = ``;
     
   firstPref.appendChild(h3Element);

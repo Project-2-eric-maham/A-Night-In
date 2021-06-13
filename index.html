@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Happy+Monkey&family=Righteous&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Montserrat&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
   <title>A Night In</title>
 </head>
@@ -22,16 +23,22 @@
     <section class="description">
       <div class="wrapper">
         <h2>How it works</h2>
-        <p>Everybody loves movie night. Whether it's alone or with friends, it's a chance to kick back on the couch and enjoy yourself.
+        <div class="description-container">
 
-        Don't know what to watch? Let us help! We can help you decide what to watch based off of whatever you're in the mood for, and how much time you have. 
+          <!-- <div class="description-image-container">
+            <img src="./Assets/pngegg.png" alt="">
+          </div> -->
 
-        Select below from 18 different genres, and 3 different lengths of movie.
-
-        Time for another? Not what you had in mind? Push the button as many times as you'd like for more results.
-
-        No more worrying about what to pick. Just enjoy a night in. 
-        </p>
+          <div class="description-text-container">
+            <p> Don't know what to watch? Let us help you decide! Push the button below for a suggestion based off of whatever you're in the mood for, and how much time you have to watch.</p>
+            
+            <p>Select below from 18 different genres, and 3 different lengths of movie!</p>
+            
+            <p>Time for another? Not what you had in mind? Push the button as many times as you'd like for more results.</p>
+            
+            <p>No more worrying about what to pick. Just enjoy a night in.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -40,41 +47,45 @@
       <div class="wrapper">
         <form action="submit" id="form">
           <fieldset>
-            <label for="duration">How long of a movie would you like to watch?</label>
-            <div class="select-duration">
-              <select name="duration" id="duration">
-                <option value="" disabled>Duration</option>
-                <option value="90">Short</option>
-                <option value="120">Long</option>
-                <option value="180">I have all the time in the world</option>
-              </select>
-              <span class="arrow"></span>
+            <div class="duration-container">
+              <label for="duration">How long of a movie would you like to watch?</label>
+              <div class="select-duration">
+                <select name="duration" id="duration">
+                  <option value="" disabled>Duration</option>
+                  <option value="90">Short</option>
+                  <option value="120">Long</option>
+                  <option value="180">I have all the time in the world</option>
+                </select>
+                <span class="arrow"></span>
+              </div>
             </div>
 
-            <label for= "genre">What type of movie would you like to watch?</label>
-            <div class="select-genre">
-              <select name="genre" id="genre">
-                <option value="" disabled>Genre</option>
-                <option value="28">Action</option>
-                <option value="12">Adventure</option>
-                <option value="16">Animation</option>
-                <option value="35">Comedy</option>
-                <option value="80">Crime</option>
-                <option value="99">Documentary</option>
-                <option value="18">Drama</option>
-                <option value="14">Fantasy</option>
-                <option value="36">History</option>
-                <option value="27">Horror</option>
-                <option value="10402">Music</option>
-                <option value="9648">Mystery</option>
-                <option value="10749">Romance</option>
-                <option value="878">Sci-fi</option>
-                <option value="10770">Tv Movie</option>
-                <option value="53">Thriller</option>
-                <option value="10752">War</option>
-                <option value="37">Western</option>
-              </select>
-              <span class="arrow"></span>
+            <div class="genre-container">
+              <label for= "genre">What type of movie would you like to watch?</label>
+              <div class="select-genre">
+                <select name="genre" id="genre">
+                  <option value="" disabled>Genre</option>
+                  <option value="28">Action</option>
+                  <option value="12">Adventure</option>
+                  <option value="16">Animation</option>
+                  <option value="35">Comedy</option>
+                  <option value="80">Crime</option>
+                  <option value="99">Documentary</option>
+                  <option value="18">Drama</option>
+                  <option value="14">Fantasy</option>
+                  <option value="36">History</option>
+                  <option value="27">Horror</option>
+                  <option value="10402">Music</option>
+                  <option value="9648">Mystery</option>
+                  <option value="10749">Romance</option>
+                  <option value="878">Sci-fi</option>
+                  <option value="10770">Tv Movie</option>
+                  <option value="53">Thriller</option>
+                  <option value="10752">War</option>
+                  <option value="37">Western</option>
+                </select>
+                <span class="arrow"></span>
+            </div>
             </div>
             
             <div class="button-container">
