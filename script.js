@@ -1,5 +1,5 @@
 const movieApp = {};
-movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
+movieApp.url = `http://api.themoviedb.org/3/discover/movie/`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
 
 movieApp.getMovieData = (genreChoice = 878, duration = 400) => {
@@ -24,7 +24,7 @@ movieApp.displayMovie = (jsonResults) => {
   const movieTitle = jsonResults.results[randomInteger].original_title;
   const movieOverview = jsonResults.results[randomInteger].overview;
   const moviePoster = jsonResults.results[randomInteger].poster_path;
-  const posterUrl = `https://image.tmdb.org/t/p/original`
+  const posterUrl = `http://image.tmdb.org/t/p/original`
   
   const firstPref = document.querySelector('#first-choice');
   firstPref.innerHTML = '';
