@@ -1,12 +1,3 @@
-
-// PSEUDO CODE
-// figure out how to use Grids for dynamic content
-// Styling for appendable content (can be done along JS)
-
-// **JS pseudo code** (stretch goals)
-// filter an array and use Math.random to pick a random movie from that array
-// use above method to display multiple results
-
 const movieApp = {};
 movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`

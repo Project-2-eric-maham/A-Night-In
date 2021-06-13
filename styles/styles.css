@@ -317,6 +317,9 @@ h3 {
 .description-container p {
   padding: 0.25em 0;
 }
+.description-container .description-image-container {
+  display: none;
+}
 
 fieldset {
   padding: 0.8rem 0.5rem;
@@ -547,6 +550,10 @@ footer a {
   }
 }
 @media (min-width: 800px) {
+  .description-container p {
+    text-align: center;
+  }
+
   .dynamic-content .wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 4fr;

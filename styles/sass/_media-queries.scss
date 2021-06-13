@@ -1,6 +1,6 @@
 @media (min-width:680px) {
 
-/// *******************************
+// ********************************
 //     landing-page sizing
 // ********************************
 
@@ -32,13 +32,11 @@
             margin: 1em 0em;
         }
 
-
         .button-container {
             grid-row: 3;
             grid-column: 2/7;
             margin: 1em 0em;
-        }
-    
+        }   
     }
 
     .form form {
@@ -63,8 +61,7 @@
         padding: .8em;
     }
 
-
-/// *******************************
+// ********************************
 //     .dynamic-content sizing
 // ********************************
 
@@ -73,49 +70,33 @@
         padding: 25px 0;
         display: grid;
         grid-template-rows: auto auto 80em;
-        h3 {
-            font-size: 2.5rem;
-        }
+            h3 {
+                font-size: 2.5rem;
+            }
         }
     }
 }
 
-
-
 @media (min-width: 800px) {
+
+    .description-container {
+        p {
+            text-align: center;   
+        }
+    }
+    
     .dynamic-content{
         .wrapper{
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto 4fr;
-            gap: 1.2em;
+            gap: 1.2em;            
             h3 {
                 grid-column: 1/4;
                 padding: .5em;
             }
-
             img {
                 grid-row: 2/4;
             }
-            // p {
-            //     line-height: 1.25rem;
-            // }
         }
-
     }
-
-    // .description-container {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     .description-text-container {
-    //         width: 80%;
-    //     }
-
-    //     .description-image-container {
-    //         width: 60%;
-    //         display: flex;
-    //         img{
-    //             align-self: center;
-    //         }
-    //     }
-    // }
 }
