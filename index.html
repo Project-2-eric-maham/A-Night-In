@@ -5,15 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=PT+Serif&family=Righteous&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Happy+Monkey&family=Righteous&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./styles/styles.css">
-  <title>Testing API</title>
+  <title>A Night In</title>
 </head>
 <body>
   <header> <!-- header starts -->
     <div class="wrapper">
-      <h1 class="logo">Movie app</h1>
+      <h1 class="logo">A Night In</h1>
       <!-- <p>Possible future description in heading or far right</p> -->
     </div>
     
@@ -23,11 +22,17 @@
     <!-- main starts -->
     <section class="description">
       <div class="wrapper">
-        <h2>Description</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus rem quod placeat cumque fugiat est tempore
-        odio cupiditate illum quidem, voluptates, praesentium perferendis officiis, non perspiciatis totam amet. Assumenda
-        adipisci culpa rerum delectus dolorem minus sed sunt quae non quia tenetur reprehenderit, vel officia illum ratione.
-        Nihil accusamus libero impedit.</p>
+        <h2>How it works</h2>
+        <p>Everybody loves movie night. Whether it's alone or with friends, it's a chance to kick back on the couch and enjoy yourself.
+
+        Don't know what to watch? Let us help! We can help you decide what to watch based off of whatever you're in the mood for, and how much time you have. 
+
+        Select below from 18 different genres, and 3 different lengths of movie.
+
+        Time for another? Not what you had in mind? Push the button as many times as you'd like for more results.
+
+        No more worrying about what to pick. Just enjoy a night in. 
+        </p>
       </div>
       
     </section>
@@ -36,6 +41,7 @@
       <div class="wrapper">
         <form action="submit" id="form">
           <fieldset>
+            <legend>How long of a movie would you like to watch?</legend>
             <input type="radio" name="duration" id="short" value="90">
             <label for="short">Short</label>
             <input type="radio" name="duration" id="long" value="120">
@@ -52,7 +58,9 @@
               <!-- consider user input and how to sanitize data -->
 
             <label for= "genre"></label>
+            <legend>What type of movie would you like to watch?</legend>
             <select name="genre" id="genre">
+              <option value="" disabled>Genre</option>
               <option value="28">Action</option>
               <option value="12">Adventure</option>
               <option value="16">Animation</option>
@@ -76,7 +84,7 @@
             </select>
             
           </fieldset>
-          <button type="submit">I sure hope it's Harry Potter...</button>
+          <button type="submit">Show me a movie</button>
         </form> <!-- form ends -->
       </div>
     </section>
@@ -86,10 +94,17 @@
       </div>
     </section>
   </main> <!-- main ends -->
-  
-  
-  <!-- <h2 class="result"></h2> -->
 
+  <footer>
+    <div class="wrapper">
+      <p class="copyright">Created at Juno College by Eric Richardson & Syedah Maham Naz</p>
+      <div class="tmdb-container">
+        <p class>Powered by TMDB API</p>
+        <img class="tmdb-logo" src="./Assets/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg" alt="The Movie Database Logo">
+      </div>
+    </div>
+
+  </footer>
 
   <script src="./script.js"></script>
 </body>
