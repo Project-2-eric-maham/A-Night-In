@@ -1,15 +1,10 @@
-// Write variables for font types 
-// write mixins for font-styles
-// write mixin for wrapper! 
-
 $font-logo: 'Bungee Shade', cursive;
-$heading-logo: 'Righteous', cursive;
-$basefont: 'Happy Monkey', cursive;
+$heading-logo: 'Bungee', cursive;
+$basefont: 'Montserrat', sans-serif;
 
 @mixin logo ($size) {
     font-family: $font-logo;
     font-size: ($size);
-    // margin: 2rem 0;
     padding: 2rem 0;
 }
 
@@ -30,10 +25,3 @@ $basefont: 'Happy Monkey', cursive;
     width: ($width);
     margin: 0 auto;
 }
-
-// font info
-    // font-family: 'Bungee Shade', cursive;
-
-    // font-family: 'PT Serif', serif;
-
-    // font-family: 'Righteous', cursive;
