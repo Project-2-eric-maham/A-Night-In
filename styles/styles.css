@@ -239,6 +239,7 @@ p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 1px;
+  line-height: 1.4rem;
 }
 
 .wrapper {
@@ -340,7 +341,7 @@ select {
   padding: 0.8em;
   border-radius: 5px;
   cursor: pointer;
-  border: 0;
+  border: 2px solid transparent;
   width: 100%;
 }
 select option {
@@ -406,15 +407,20 @@ button {
 }
 
 button:focus,
-button:hover {
+button:hover,
+select:focus,
+select:hover {
   border: 2px solid #1f6c79;
   opacity: 0.8;
 }
 
+.dynamic-content {
+  display: none;
+}
 .dynamic-content .wrapper {
   padding: 25px 0;
   display: grid;
-  grid-template-rows: auto auto 80em;
+  grid-template-rows: auto auto auto;
   gap: 1rem;
 }
 .dynamic-content .wrapper h3 {
@@ -424,6 +430,7 @@ button:hover {
 .dynamic-content .wrapper p {
   grid-row: 2;
   padding-bottom: 0.8em;
+  line-height: 1.6rem;
 }
 .dynamic-content .wrapper img {
   grid-row: 3;
@@ -433,13 +440,12 @@ button:hover {
   max-height: 100%;
 }
 
-.large-wrapper {
-  max-width: 1200px;
+footer {
+  display: none;
   background-color: #F7FCFE;
   margin: 0 auto;
   height: 8vh;
 }
-
 footer .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -544,6 +550,7 @@ footer a {
   .dynamic-content .wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 4fr;
+    gap: 1.2em;
   }
   .dynamic-content .wrapper h3 {
     grid-column: 1/4;

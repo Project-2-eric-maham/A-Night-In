@@ -9,6 +9,7 @@
 p {
     @include base-styling(1.2rem);
     letter-spacing: 1px;
+    line-height: 1.4rem;
 }
 
 .wrapper {
@@ -125,8 +126,9 @@ select {
     option {
         background: #f7fcfe;
     }
-    border: 0;
+    border: 2px solid transparent;
     width: 100%;
+    
 }
 
 .select-genre,
@@ -176,6 +178,8 @@ select {
     top: 37%
 }
 
+
+
 button {
     margin-top: 10px;
     padding: 1em;
@@ -189,21 +193,32 @@ button {
 }
 
 button:focus,
-button:hover {
+button:hover,
+select:focus,
+select:hover {
     border: 2px solid #1f6c79;
     opacity: 0.8;
-    // not working???
 } 
+
+// .arrow::before:hover {
+//     top: 0%;   
+// }
+
+// .arrow::after:hover {
+//     top: 75%;
+// }
 
 /// *******************************
 //     .dynamic-content styling
 // ********************************
 
 .dynamic-content {
+    display: none;
     .wrapper{
+        // display: none;
         padding: 25px 0;
         display: grid;
-        grid-template-rows: auto auto 80em;
+        grid-template-rows: auto auto auto;
         gap: 1rem;
         h3 {
             grid-row: 1;
@@ -212,6 +227,7 @@ button:hover {
         p {
             grid-row: 2;
             padding-bottom: 0.8em;
+            line-height: 1.6rem;
         }
         img {
             grid-row: 3;
@@ -226,13 +242,11 @@ button:hover {
 //         footer styling
 // ********************************
 
-.large-wrapper {
-        max-width: 1200px;
-        background-color: #F7FCFE;
-        margin: 0 auto;
-        height: 8vh;
-    }
 footer {
+    display: none;
+    background-color: #F7FCFE;
+    margin: 0 auto;
+    height: 8vh;
     // border: 1px red solid;
     .wrapper {
         display: flex;

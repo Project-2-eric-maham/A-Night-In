@@ -59,6 +59,8 @@ movieApp.setUpEventListeners = function(){
     event.preventDefault();
     // on submit targeting genre and duration within the form
     movieApp.getMovieData(genre.value, form.duration.value);
+    document.querySelector(`footer`).style.display="block";
+    document.querySelector(`.dynamic-content`).style.display="block";
   })
 }
 
