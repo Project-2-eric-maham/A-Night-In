@@ -1,5 +1,5 @@
 const movieApp = {};
-movieApp.url = `https://api.themoviedb.org/3/discover/movie/`
+movieApp.url = `https://api.themoviedb.org/3/discover/movie`
 movieApp.apikey = `a0e32a4a0c009553ac6020779811cc03`
 
 movieApp.getMovieData = (genreChoice = 878, duration = 400) => {
