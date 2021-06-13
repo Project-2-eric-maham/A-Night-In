@@ -542,10 +542,14 @@ footer a {
 }
 @media (min-width: 800px) {
   .dynamic-content .wrapper {
-    grid-template-columns: 3fr 4fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 4fr;
   }
+  .dynamic-content .wrapper h3 {
+    grid-column: 1/4;
+    padding: 0.5em;
+  }
   .dynamic-content .wrapper img {
-    grid-row: 1/4;
+    grid-row: 2/4;
   }
 }
